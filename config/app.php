@@ -163,11 +163,13 @@ return [
         /*
          * Application Service Providers...
          */
+        // App\Providers\DemoServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        // đăng kí service provider ( chứa view composer) để sử dụng trog tất cả view
+        App\Providers\ComposerServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -183,6 +185,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        // 'Auth' => Illuminate\Support\Facades\Auth::class,
+        
     ])->toArray(),
 
 ];
